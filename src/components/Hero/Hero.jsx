@@ -1,0 +1,229 @@
+import React, { useState, useEffect } from 'react';
+import './Hero.css';
+import heroTech1 from '../../assets/hero-tech-1.jpg';
+import heroTech2 from '../../assets/hero-tech-2.jpg';
+import heroTech3 from '../../assets/hero-tech-3.jpg';
+
+import {
+  FaClock,
+  FaHeadset,
+  FaArrowRight,
+  FaPhoneAlt,
+  FaCheckCircle,
+  FaTag,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+  FaTimes
+} from 'react-icons/fa';
+import { FaWrench } from 'react-icons/fa6';
+
+const slidesData = [
+  {
+    badge: 'Trusted AC Service Experts',
+    titleLine1: 'Cool Comfort,',
+    titleLine2: 'Perfect Service',
+    description: 'Professional AC Installation, Repair, Maintenance & AMC Services for Homes, Offices & Commercial Spaces.',
+    image: heroTech1,
+  },
+  {
+    badge: 'Fast & Reliable Doorstep Service',
+    titleLine1: 'Expert Repair,',
+    titleLine2: 'Instant Cooling',
+    description: 'Same-day troubleshooting and deep chemical jet foam servicing with genuine parts and verified warranty.',
+    image: heroTech2,
+  },
+  {
+    badge: 'Complete Diagnostic & Gas Refill',
+    titleLine1: 'Smart Cooling,',
+    titleLine2: 'Lower Power Bills',
+    description: 'Preventive maintenance, capacitor check & precision gas charging for peak AC performance all season long.',
+    image: heroTech3,
+  }
+];
+
+const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [callModalOpen, setCallModalOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slidesData.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, []);
+
+  const slide = slidesData[currentSlide];
+
+  const waNoman = "https://wa.me/918888678078?text=Hello%20PatelAirCondition,%20I%20want%20to%20book%20an%20AC%20service/repair.";
+  const waMuzammil = "https://wa.me/917304077952?text=Hello%20PatelAirCondition,%20I%20want%20to%20book%20an%20AC%20service/repair.";
+
+  return (
+    <section className="hero-section" id="home">
+      <div className="container hero-container">
+        {/* Left Content */}
+        <div className="hero-left">
+          {/* Top Trust Badge */}
+          <div className="hero-badge">
+            <FaMapMarkerAlt className="badge-pin-icon" />
+            <span>{slide.badge}</span>
+          </div>
+
+          {/* Main Hero Heading */}
+          <h1 className="hero-title">
+            {slide.titleLine1} <br />
+            <span className="text-highlight-blue">{slide.titleLine2}</span>
+          </h1>
+
+          {/* Subtitle Description */}
+          <p className="hero-description">
+            {slide.description}
+          </p>
+
+          {/* 4 Feature Highlights */}
+          <div className="hero-trust-row">
+            <div className="trust-item">
+              <div className="trust-icon">
+                <FaWrench />
+              </div>
+              <span className="trust-label">Certified Technicians</span>
+            </div>
+
+            <div className="trust-item">
+              <div className="trust-icon">
+                <FaCheckCircle />
+              </div>
+              <span className="trust-label">100% Reliable</span>
+            </div>
+
+            <div className="trust-item">
+              <div className="trust-icon">
+                <FaClock />
+              </div>
+              <span className="trust-label">On-Time Service</span>
+            </div>
+
+            <div className="trust-item">
+              <div className="trust-icon">
+                <FaTag />
+              </div>
+              <span className="trust-label">Affordable Pricing</span>
+            </div>
+          </div>
+
+          {/* CTA Action Buttons */}
+          <div className="hero-cta-group">
+            <a href="#contact" className="btn-primary-blue btn-hero-cta">
+              <span>Book a Service</span>
+              <FaArrowRight />
+            </a>
+
+            <button 
+              type="button"
+              className="btn-outline-blue btn-hero-cta"
+              onClick={() => setCallModalOpen(true)}
+            >
+              <span>Call Now</span>
+              <FaPhoneAlt className="cta-phone-icon" />
+            </button>
+          </div>
+        </div>
+
+        {/* Right Media Column */}
+        <div className="hero-right">
+          <div className="hero-image-wrapper">
+            <img
+              src={slide.image}
+              alt="Professional AC technician servicing indoor split air conditioner unit"
+              className="hero-main-img"
+            />
+
+            {/* Floating 24/7 Support Card */}
+            <div 
+              className="floating-support-card cursor-pointer"
+              onClick={() => setCallModalOpen(true)}
+            >
+              <div className="support-icon-box">
+                <FaHeadset />
+              </div>
+              <div className="support-text-box">
+                <strong className="support-title">24/7</strong>
+                <span className="support-sub">Support Available</span>
+                <p className="support-desc">Click to call technician now!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Slider Pagination Dots */}
+      <div className="hero-slider-dots">
+        {slidesData.map((_, index) => (
+          <button
+            key={index}
+            className={`slider-dot ${currentSlide === index ? 'active' : ''}`}
+            onClick={() => setCurrentSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Quick Call Modal / Bottom Sheet Popup */}
+      {callModalOpen && (
+        <div className="call-modal-overlay" onClick={() => setCallModalOpen(false)}>
+          <div className="call-modal-box" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3>Direct Call &amp; WhatsApp Booking</h3>
+              <button 
+                className="modal-close-btn" 
+                onClick={() => setCallModalOpen(false)}
+                aria-label="Close modal"
+              >
+                <FaTimes />
+              </button>
+            </div>
+
+            <p className="modal-subtext">
+              Speak directly with our expert AC technicians or send a WhatsApp message:
+            </p>
+
+            <div className="modal-contacts-list">
+              {/* Noman Patel */}
+              <div className="modal-contact-row">
+                <div className="contact-person-info">
+                  <strong>Noman Patel</strong>
+                  <span>Senior AC Specialist</span>
+                </div>
+                <div className="contact-btn-pair">
+                  <a href="tel:+918888678078" className="btn-call-action" title="Call Now">
+                    <FaPhoneAlt /> +91 88886 78078
+                  </a>
+                  <a href={waNoman} target="_blank" rel="noopener noreferrer" className="btn-wa-action" title="Chat on WhatsApp">
+                    <FaWhatsapp /> WhatsApp
+                  </a>
+                </div>
+              </div>
+
+              {/* Muzammil Ahmad */}
+              <div className="modal-contact-row">
+                <div className="contact-person-info">
+                  <strong>Muzammil Ahmad</strong>
+                  <span>AC Diagnostics &amp; Repair</span>
+                </div>
+                <div className="contact-btn-pair">
+                  <a href="tel:+917304077952" className="btn-call-action" title="Call Now">
+                    <FaPhoneAlt /> +91 73040 77952
+                  </a>
+                  <a href={waMuzammil} target="_blank" rel="noopener noreferrer" className="btn-wa-action" title="Chat on WhatsApp">
+                    <FaWhatsapp /> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};
+
+export default Hero;

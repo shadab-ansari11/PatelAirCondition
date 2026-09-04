@@ -1,0 +1,57 @@
+/* App Level Styles */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+}
+
+/* Floating Action / Quick Contact Buttons */
+.floating-action-group {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.floating-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.floating-wa {
+  background-color: #25d366;
+}
+
+.floating-wa:hover {
+  background-color: #1eb954;
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+}
+
+.floating-call {
+  background-color: var(--primary-blue);
+}
+
+.floating-call:hover {
+  background-color: var(--primary-blue-dark);
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 102, 255, 0.45);
+}

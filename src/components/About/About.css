@@ -1,0 +1,164 @@
+.about-section {
+  background-color: #ffffff;
+  position: relative;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Left Column */
+.about-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-heading {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  margin-top: 4px;
+  margin-bottom: 18px;
+}
+
+.about-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+
+/* Feature Checklist */
+.about-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--navy-dark);
+}
+
+.about-check-icon {
+  color: var(--primary-blue);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.about-cta-wrap {
+  margin-top: 5px;
+}
+
+.btn-about-cta {
+  padding: 12px 26px;
+  font-size: 14.5px;
+}
+
+/* Right Column */
+.about-right {
+  display: flex;
+  justify-content: center;
+}
+
+.about-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.about-main-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 12px 35px rgba(0, 40, 100, 0.08);
+}
+
+/* Floating Experience Card */
+.floating-exp-card {
+  position: absolute;
+  bottom: 20px;
+  right: -15px;
+  background: #ffffff;
+  padding: 16px 22px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0, 50, 150, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.exp-number {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 900;
+  color: var(--primary-blue);
+  line-height: 1;
+}
+
+.exp-text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy-dark);
+  line-height: 1.1;
+}
+
+.exp-sub {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-heading {
+    font-size: 32px;
+  }
+
+  .about-right {
+    order: -1;
+  }
+
+  .about-main-img {
+    height: 320px;
+  }
+
+  .floating-exp-card {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-heading {
+    font-size: 28px;
+  }
+  .about-main-img {
+    height: 250px;
+  }
+}

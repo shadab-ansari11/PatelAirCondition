@@ -1,0 +1,358 @@
+.header-wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+  transition: var(--transition);
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.header-scrolled {
+  box-shadow: 0 4px 20px rgba(0, 40, 100, 0.08);
+  border-bottom-color: transparent;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+}
+
+/* Brand Logo */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-icon-wrap {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-blue);
+  font-size: 32px;
+}
+
+.snowflake-icon {
+  filter: drop-shadow(0 2px 4px rgba(0, 102, 255, 0.2));
+}
+
+.logo-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+}
+
+.brand-sub {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 1.2px;
+  margin-top: 2px;
+}
+
+/* Desktop Nav */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: #334155;
+  padding: 8px 4px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--primary-blue);
+}
+
+.nav-link.active {
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.active-dot {
+  position: absolute;
+  bottom: -2px;
+  width: 18px;
+  height: 2.5px;
+  background-color: var(--primary-blue);
+  border-radius: var(--radius-full);
+}
+
+/* Header Right Actions */
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-call-btn-container {
+  position: relative;
+}
+
+.header-call-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  padding: 7px 18px;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.25);
+  cursor: pointer;
+}
+
+.header-call-btn:hover {
+  background-color: var(--primary-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 102, 255, 0.35);
+}
+
+.call-btn-icon {
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.2);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-btn-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.call-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1;
+}
+
+.call-number {
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 1px;
+}
+
+.call-arrow-icon {
+  font-size: 10px;
+  opacity: 0.8;
+  margin-left: 2px;
+}
+
+/* Call Dropdown Menu */
+.call-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 230px;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0, 40, 120, 0.15);
+  border: 1px solid #e2e8f0;
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 100;
+}
+
+.call-dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-call-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.dropdown-call-item:hover {
+  background: var(--bg-ice);
+}
+
+.item-person-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.item-text strong {
+  font-size: 13px;
+  color: var(--navy-dark);
+}
+
+.item-text span {
+  font-size: 12px;
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #f1f5f9;
+  margin: 4px 0;
+}
+
+/* Mobile Toggle */
+.mobile-toggle-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: var(--navy-dark);
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* Mobile Drawer */
+.mobile-menu-drawer {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #e2e8f0;
+  padding: 20px;
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-drawer.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mobile-nav-link {
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  display: block;
+  padding: 6px 0;
+}
+
+.mobile-nav-link.active {
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.mobile-cta-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-contact-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-toggle-btn {
+    display: block;
+  }
+
+  .mobile-menu-drawer {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .call-btn-text, .call-arrow-icon {
+    display: none;
+  }
+  .header-call-btn {
+    padding: 8px 10px;
+  }
+  .call-btn-icon {
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    font-size: 16px;
+  }
+}

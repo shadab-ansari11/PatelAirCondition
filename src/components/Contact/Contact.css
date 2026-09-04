@@ -1,0 +1,250 @@
+.contact-section {
+  background-color: #ffffff;
+  position: relative;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1.05fr 1.15fr;
+  align-items: center;
+  gap: 45px;
+}
+
+/* Left Column */
+.contact-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-heading {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.contact-item-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 10px rgba(0, 40, 100, 0.04);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact-item-card:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 6px 18px rgba(0, 80, 200, 0.08);
+  transform: translateY(-2px);
+}
+
+.contact-icon-wrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-ice);
+  color: var(--primary-blue);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-detail-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-type-title {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.contact-type-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy-dark);
+  line-height: 1.3;
+}
+
+.contact-cta-wrap {
+  margin-top: 5px;
+}
+
+.btn-contact-msg {
+  padding: 12px 26px;
+  font-size: 14.5px;
+}
+
+/* Right Column: Booking Card Wrapper */
+.contact-right {
+  position: relative;
+}
+
+.booking-card-wrapper {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-xl);
+  padding: 32px 30px;
+  box-shadow: 0 16px 40px rgba(0, 50, 150, 0.08);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.form-tech-watermark {
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  height: 210px;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-booking-form {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-field-group {
+  position: relative;
+  width: 100%;
+}
+
+.form-field-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 36px 12px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--navy-dark);
+  background-color: #ffffff;
+  transition: var(--transition);
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.12);
+}
+
+.inner-icon {
+  position: absolute;
+  right: 14px;
+  color: #94a3b8;
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.form-select-ctrl {
+  padding-right: 14px;
+  cursor: pointer;
+}
+
+.form-textarea-ctrl {
+  padding: 12px 14px;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn-form-send {
+  align-self: flex-start;
+  padding: 12px 28px;
+  font-size: 14.5px;
+  margin-top: 4px;
+}
+
+.paper-plane-icon {
+  font-size: 12px;
+}
+
+.form-success-box {
+  text-align: center;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.form-success-icon {
+  font-size: 48px;
+  color: #10b981;
+}
+
+.form-success-box h3 {
+  font-size: 22px;
+  color: var(--navy-dark);
+}
+
+.form-success-box p {
+  color: var(--text-muted);
+  font-size: 14.5px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-heading {
+    font-size: 28px;
+  }
+
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-two-cols {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .booking-card-wrapper {
+    padding: 24px 18px;
+  }
+
+  .btn-form-send {
+    width: 100%;
+  }
+}
