@@ -55,7 +55,6 @@ const Hero = () => {
   const slide = slidesData[currentSlide];
 
   const waNoman = "https://wa.me/918888678078?text=Hello%20PatelAirCondition,%20I%20want%20to%20book%20an%20AC%20service/repair.";
-  const waMuzammil = "https://wa.me/917304077952?text=Hello%20PatelAirCondition,%20I%20want%20to%20book%20an%20AC%20service/repair.";
 
   return (
     <section className="hero-section" id="home">
@@ -167,12 +166,12 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Quick Call Modal / Bottom Sheet Popup */}
+      {/* Quick Call Modal Popup */}
       {callModalOpen && (
         <div className="call-modal-overlay" onClick={() => setCallModalOpen(false)}>
           <div className="call-modal-box" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
-              <h3>Direct Call &amp; WhatsApp Booking</h3>
+              <h3>Direct Call &amp; Booking</h3>
               <button 
                 className="modal-close-btn" 
                 onClick={() => setCallModalOpen(false)}
@@ -183,19 +182,19 @@ const Hero = () => {
             </div>
 
             <p className="modal-subtext">
-              Speak directly with our expert AC technicians or send a WhatsApp message:
+              Choose a technician to call directly for instant doorstep AC repair:
             </p>
 
             <div className="modal-contacts-list">
-              {/* Noman Patel */}
+              {/* Noman Patel - Direct Call & WhatsApp */}
               <div className="modal-contact-row">
                 <div className="contact-person-info">
                   <strong>Noman Patel</strong>
-                  <span>Senior AC Specialist</span>
+                  <span>Call &amp; WhatsApp Booking</span>
                 </div>
                 <div className="contact-btn-pair">
-                  <a href="tel:+918888678078" className="btn-call-action" title="Call Now">
-                    <FaPhoneAlt /> +91 88886 78078
+                  <a href="tel:+918888678078" className="btn-call-action" title="Direct Phone Call">
+                    <FaPhoneAlt /> Call +91 88886 78078
                   </a>
                   <a href={waNoman} target="_blank" rel="noopener noreferrer" className="btn-wa-action" title="Chat on WhatsApp">
                     <FaWhatsapp /> WhatsApp
@@ -203,18 +202,15 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Muzammil Ahmad */}
+              {/* Muzammil Ahmad - Calling Only */}
               <div className="modal-contact-row">
                 <div className="contact-person-info">
                   <strong>Muzammil Ahmad</strong>
-                  <span>AC Diagnostics &amp; Repair</span>
+                  <span>Direct Calling Only</span>
                 </div>
-                <div className="contact-btn-pair">
-                  <a href="tel:+917304077952" className="btn-call-action" title="Call Now">
-                    <FaPhoneAlt /> +91 73040 77952
-                  </a>
-                  <a href={waMuzammil} target="_blank" rel="noopener noreferrer" className="btn-wa-action" title="Chat on WhatsApp">
-                    <FaWhatsapp /> WhatsApp
+                <div className="contact-btn-single">
+                  <a href="tel:+917304077952" className="btn-call-action w-full" title="Direct Phone Call">
+                    <FaPhoneAlt /> Call +91 73040 77952
                   </a>
                 </div>
               </div>
