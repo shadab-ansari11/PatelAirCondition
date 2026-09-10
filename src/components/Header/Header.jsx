@@ -1,27 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import './Header.css';
-import { FaPhoneAlt, FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
-import { FaSnowflake } from 'react-icons/fa6';
+import React, { useState, useEffect } from "react";
+import "./Header.css";
+import { FaPhoneAlt, FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import { FaSnowflake } from "react-icons/fa6";
+import logoImg from "../../assets/logo.jpeg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeNav, setActiveNav] = useState('home');
+  const [activeNav, setActiveNav] = useState("home");
   const [showCallDropdown, setShowCallDropdown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'Home', href: '#home' },
-    { id: 'about', label: 'About Us', href: '#about' },
-    { id: 'services', label: 'Services', href: '#services' },
-    { id: 'contact', label: 'Contact Us', href: '#contact' },
+    { id: "home", label: "Home", href: "#home" },
+    { id: "about", label: "About Us", href: "#about" },
+    { id: "services", label: "Services", href: "#services" },
+    { id: "contact", label: "Contact Us", href: "#contact" },
   ];
 
   const handleNavClick = (id) => {
@@ -30,12 +31,25 @@ const Header = () => {
   };
 
   return (
-    <header className={`header-wrapper ${isScrolled ? 'header-scrolled' : ''}`}>
+    <header className={`header-wrapper ${isScrolled ? "header-scrolled" : ""}`}>
       <div className="container header-container">
         {/* Brand Logo */}
-        <a href="#home" className="header-brand" onClick={() => handleNavClick('home')}>
+        <a
+          href="#home"
+          className="header-brand"
+          onClick={() => handleNavClick("home")}
+        >
           <div className="logo-icon-wrap">
-            <FaSnowflake className="snowflake-icon" />
+            <img
+              src={logoImg}
+              alt="PatelAirCondition Logo"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "50%",
+              }}
+            />
           </div>
           <div className="logo-text-wrap">
             <span className="brand-name">PatelAirCondition</span>
@@ -50,11 +64,13 @@ const Header = () => {
               <li key={item.id} className="nav-item">
                 <a
                   href={item.href}
-                  className={`nav-link ${activeNav === item.id ? 'active' : ''}`}
+                  className={`nav-link ${activeNav === item.id ? "active" : ""}`}
                   onClick={() => handleNavClick(item.id)}
                 >
                   {item.label}
-                  {activeNav === item.id && <span className="active-dot"></span>}
+                  {activeNav === item.id && (
+                    <span className="active-dot"></span>
+                  )}
                 </a>
               </li>
             ))}
@@ -63,7 +79,7 @@ const Header = () => {
 
         {/* Right CTA: Dual Contact Call Button with Dropdown */}
         <div className="header-right-actions">
-          <div 
+          <div
             className="header-call-btn-container"
             onMouseEnter={() => setShowCallDropdown(true)}
             onMouseLeave={() => setShowCallDropdown(false)}
@@ -80,9 +96,13 @@ const Header = () => {
             </a>
 
             {/* Quick Dropdown for both Numbers */}
-            <div className={`call-dropdown-menu ${showCallDropdown ? 'show' : ''}`}>
+            <div
+              className={`call-dropdown-menu ${showCallDropdown ? "show" : ""}`}
+            >
               <a href="tel:+918888678078" className="dropdown-call-item">
-                <div className="item-person-icon"><FaPhoneAlt /></div>
+                <div className="item-person-icon">
+                  <FaPhoneAlt />
+                </div>
                 <div className="item-text">
                   <strong>Noman Patel</strong>
                   <span>+91 88886 78078</span>
@@ -90,7 +110,9 @@ const Header = () => {
               </a>
               <div className="dropdown-divider"></div>
               <a href="tel:+917304077952" className="dropdown-call-item">
-                <div className="item-person-icon"><FaPhoneAlt /></div>
+                <div className="item-person-icon">
+                  <FaPhoneAlt />
+                </div>
                 <div className="item-text">
                   <strong>Muzammil Ahmad</strong>
                   <span>+91 73040 77952</span>
@@ -111,14 +133,14 @@ const Header = () => {
       </div>
 
       {/* Mobile Drawer Menu */}
-      <div className={`mobile-menu-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+      <div className={`mobile-menu-drawer ${mobileMenuOpen ? "open" : ""}`}>
         <div className="mobile-nav-inner">
           <ul className="mobile-nav-list">
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
                   href={item.href}
-                  className={`mobile-nav-link ${activeNav === item.id ? 'active' : ''}`}
+                  className={`mobile-nav-link ${activeNav === item.id ? "active" : ""}`}
                   onClick={() => handleNavClick(item.id)}
                 >
                   {item.label}
@@ -127,11 +149,17 @@ const Header = () => {
             ))}
           </ul>
           <div className="mobile-cta-box">
-            <span className="mobile-contact-title">Quick Call Technicians:</span>
+            <span className="mobile-contact-title">
+              Quick Call Technicians:
+            </span>
             <a href="tel:+918888678078" className="btn-primary-blue w-full">
               <FaPhoneAlt /> Noman Patel: +91 88886 78078
             </a>
-            <a href="tel:+917304077952" className="btn-outline-blue w-full" style={{ background: '#f8fafc' }}>
+            <a
+              href="tel:+917304077952"
+              className="btn-outline-blue w-full"
+              style={{ background: "#f8fafc" }}
+            >
               <FaPhoneAlt /> Muzammil Ahmad: +91 73040 77952
             </a>
           </div>
