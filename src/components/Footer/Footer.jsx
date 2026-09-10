@@ -11,6 +11,7 @@ import {
   FaClock
 } from 'react-icons/fa';
 import { FaSnowflake } from 'react-icons/fa6';
+import logoImg from '../../assets/logo.jpeg';
 
 const Footer = () => {
   return (
@@ -20,7 +21,7 @@ const Footer = () => {
         <div className="footer-col footer-col-brand">
           <div className="footer-brand">
             <div className="footer-logo-icon">
-              <FaSnowflake />
+              <img src={logoImg} alt="PatelAirCondition Logo" style={{width: '54px', height: '54px', objectFit: 'cover', borderRadius: '50%'}} />
             </div>
             <div className="footer-brand-text">
               <span className="brand-name-white">PatelAirCondition</span>
