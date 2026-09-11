@@ -19,24 +19,24 @@ import { FaWrench } from 'react-icons/fa6';
 
 const slidesData = [
   {
-    badge: 'Trusted AC Service Experts',
-    titleLine1: 'Cool Comfort,',
-    titleLine2: 'Perfect Service',
-    description: 'Professional AC Installation, Repair, Maintenance & AMC Services for Homes, Offices & Commercial Spaces.',
+    badge: 'Serving Nagpur, Kamptee & Kanhan',
+    titleLine1: 'Patel Air Condition',
+    titleLine2: 'AC & Appliance Repair',
+    description: 'Top-rated AC Installation, Jet Pump Servicing, Underground Copper Piping, Washing Machine & Refrigerator Repair across Nagpur, Kamptee & Kanhan.',
     image: heroTech1,
   },
   {
-    badge: 'Fast & Reliable Doorstep Service',
+    badge: 'Fast 45-60 Min Doorstep Arrival',
     titleLine1: 'Expert Repair,',
     titleLine2: 'Instant Cooling',
-    description: 'Same-day troubleshooting and deep chemical jet foam servicing with genuine parts and verified warranty.',
+    description: 'Same-day AC troubleshooting, gas top-up, washing machine PCB repair & fridge compressor replacement with 100% genuine parts.',
     image: heroTech2,
   },
   {
-    badge: 'Complete Diagnostic & Gas Refill',
-    titleLine1: 'Smart Cooling,',
-    titleLine2: 'Lower Power Bills',
-    description: 'Preventive maintenance, capacitor check & precision gas charging for peak AC performance all season long.',
+    badge: 'Concealed Copper Piping & Gas Refill',
+    titleLine1: 'Underground Piping,',
+    titleLine2: 'Zero Leakage Guarantee',
+    description: 'Heavy gauge pure copper pipe installation for new buildings & renovations with nitrogen pressure testing in Nagpur, Kamptee & Kanhan.',
     image: heroTech3,
   }
 ];
