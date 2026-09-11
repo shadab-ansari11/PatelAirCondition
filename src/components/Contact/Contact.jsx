@@ -97,9 +97,9 @@ const Contact = () => {
                 <FaMapMarkerAlt />
               </div>
               <div className="contact-detail-text">
-                <span className="contact-type-title">Our Location</span>
+                <span className="contact-type-title">Service Areas</span>
                 <span className="contact-type-val">
-                  12, Central Avenue, Nagpur - 440001
+                  Nagpur, Kamptee &amp; Kanhan (Doorstep Service)
                 </span>
               </div>
             </div>
@@ -111,7 +111,7 @@ const Contact = () => {
               </div>
               <div className="contact-detail-text">
                 <span className="contact-type-title">Working Hours</span>
-                <span className="contact-type-val">Mon - Sun: 8:00 AM - 8:00 PM</span>
+                <span className="contact-type-val">Mon - Sun: 8:00 AM - 9:00 PM (Emergency Service Available)</span>
               </div>
             </div>
           </div>
@@ -158,7 +158,7 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="Your Phone"
+                        placeholder="Your Phone (e.g. 8888678078)"
                         required
                         className="form-control"
                       />
@@ -171,14 +171,14 @@ const Contact = () => {
                   <div className="form-field-group">
                     <div className="input-with-icon">
                       <input
-                        type="email"
+                        type="text"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="Your Email"
+                        placeholder="Your Location / Area (e.g. Kamptee, Kanhan, Nagpur)"
                         className="form-control"
                       />
-                      <FaEnvelope className="inner-icon" />
+                      <FaMapMarkerAlt className="inner-icon" />
                     </div>
                   </div>
 
@@ -190,12 +190,14 @@ const Contact = () => {
                         onChange={handleChange}
                         className="form-control form-select-ctrl"
                       >
-                        <option value="">Service Required</option>
-                        <option value="AC Installation">AC Installation</option>
-                        <option value="AC Repair">AC Repair</option>
-                        <option value="AC Maintenance">AC Maintenance</option>
-                        <option value="AC Gas Filling">AC Gas Filling</option>
-                        <option value="AC AMC">AC AMC</option>
+                        <option value="">Select Required Service</option>
+                        <option value="AC Repair">AC Repair &amp; Jet Service</option>
+                        <option value="AC Installation">AC Installation &amp; Uninstallation</option>
+                        <option value="AC Gas Filling">AC Gas Filling / Leak Check</option>
+                        <option value="Underground Copper Piping">Underground Copper Piping</option>
+                        <option value="Washing Machine Repair">Washing Machine Repair</option>
+                        <option value="Refrigerator Repair">Refrigerator / Fridge Repair</option>
+                        <option value="AC AMC">AC Annual Maintenance (AMC)</option>
                       </select>
                     </div>
                   </div>

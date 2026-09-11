@@ -64,11 +64,11 @@ const Footer = () => {
         <div className="footer-col">
           <h4 className="footer-col-title">Our Services</h4>
           <ul className="footer-links-list">
-            <li><a href="#services">AC Installation</a></li>
-            <li><a href="#services">AC Repair</a></li>
-            <li><a href="#services">AC Maintenance</a></li>
-            <li><a href="#services">AC Gas Filling</a></li>
-            <li><a href="#services">AC AMC</a></li>
+            <li><a href="#services">AC Installation &amp; Repair</a></li>
+            <li><a href="#copper-piping">Underground Copper Piping</a></li>
+            <li><a href="#washing-machine">Washing Machine Repair</a></li>
+            <li><a href="#refrigerator">Refrigerator / Fridge Service</a></li>
+            <li><a href="#services">AC Gas Refilling &amp; AMC</a></li>
           </ul>
         </div>
 

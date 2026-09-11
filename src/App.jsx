@@ -1,6 +1,9 @@
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Services from "./components/Services/Services";
+import CopperPiping from "./components/CopperPiping/CopperPiping";
+import WashingMachine from "./components/WashingMachine/WashingMachine";
+import Refrigerator from "./components/Refrigerator/Refrigerator";
 import About from "./components/About/About";
 import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 import Contact from "./components/Contact/Contact";
@@ -10,7 +13,7 @@ import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 function App() {
   const waUrl =
-    "https://wa.me/918888678078?text=Hello%20PatelAirCondition,%20I%20want%20to%20book%20an%20AC%20service/repair.";
+    "https://wa.me/918888678078?text=Hello%20PatelAirCondition,%20I%20want%20to%20book%20a%20service/repair.";
 
   return (
     <div className="app">
@@ -18,6 +21,9 @@ function App() {
       <main>
         <Hero />
         <Services />
+        <CopperPiping />
+        <WashingMachine />
+        <Refrigerator />
         <About />
         <WhyChooseUs />
         <Contact />
